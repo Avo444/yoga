@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ========================= [Font's] =========================*/
+$titleFont: "Lora", serif;
+$descFont: "Poppins", sans-serif;
+
+/* ========================= [Color's && Gradient's] =========================*/
+$gradient: linear-gradient(90deg,rgba(255, 82, 175, 1) 0%, rgba(159, 83, 255, 1) 100%);
+$bodyColor: #F5F0FF;
+$bodyColorDark: #1E0849;
+$titleColor: #220953;
+$textColor: #4B3E65;
+$textColorDark: #A197B4;
+
+
+/* ========================= [Classe's] =========================*/
+.container {
+    max-width: 1120px;
+    margin: auto;
+}
+
+
+/* ========================= [Extend's] =========================*/
+%gradientText {
+    background: $gradient;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ========================= [Global Classe's] =========================*/
+
+.title {
+    font-family: $titleFont;
+    font-size: 64px;
+    font-weight: 500;
+    color: $titleColor;
+}
+
+.desc {
+    color: $textColor;
+    font-family: $descFont;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: $descFont;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px 28px;
+    background: $gradient;
+    border-radius: 64px;
+    img {
+        margin-left: 4px;
+    }
+}
+
+ .logo {
+    font-family: $titleFont;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    @extend %gradientText;
+}
+
+/* ========================= [Mixin's] =========================*/
+@mixin flex($justify, $align, $direction, $wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+
+/* ========================= [Style's] =========================*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $descFont;
+    font-size: 16px;
+    background-color: $bodyColor;
+}
+
+header {
+    padding: 28px 0;
+    
+    .container {
+        @include flex(space-between, center, row, nowrap);
+       
+        nav {
+            display: flex;
+            align-items: center;
+            ul {
+                display: flex;
+                list-style-type: none;
+                li {
+                    a {
+                        font-family: $descFont;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: $titleColor;
+                        text-decoration: none;
+                        transition: all .3s linear;
+                        &.active {
+                            @extend %gradientText;
+                        }
+                        &:hover {
+                            @extend %gradientText;
+                        }
+                    }
+                    &:not(:first-child) {
+                        margin-left: 72px;
+                    }
+                }
+            }
+        }
+        .theme__mode {
+            margin-left: 70px;
+            cursor: pointer;
+            span {
+                display: none;
+                &.active {
+                    display: block;                    
+                }
+            }
+        }
+    }
+}
+main {
+    .hero {
+        padding: 126px 0;
+        .row {
+            display: flex;
+            align-items: center;
+            position: relative;
+            .hero__inner {
+                max-width: 588px;
+                .title {                    
+                    font-size: 96px;
+                    position: relative;
+                    span {
+                        display: inline-block;
+                        color: #fff;
+                        background: $gradient;
+                        padding: 0 12px 6px 12px;
+                        border-radius: 16px;
+                        transform: rotate(10deg);
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -12px;
+                        left: -30px;
+                        width: 24px;
+                        height: 24px;
+                        background-image: url('../images/Icons/home-circle.svg');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 38%;
+                        right: 0;
+                        background-image: url("../images/Icons/home-star.svg");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 95px;
+                        height: 91px;
+                    }
+                }
+                .desc {
+                    margin-top: 20px;
+                    color: $textColor;
+                    max-width: 417px;
+                }
+                .btn {
+                    margin-top: 32px;
+                }
+                .stats {
+                    display: flex;
+                    margin-top: 48px;                    
+                    .stat {
+                        text-align: center;
+
+                        &-number {
+                            color: $titleColor;
+                            font-family: $titleFont;
+                            font-size: 56px;
+                        }
+                        &-label {
+                            color: $titleColor;
+                            font-family: $descFont;
+                            font-size: 14px;
+                            margin-top: 4px;
+                        }
+                        &:not(:first-child) {
+                            margin-left: 64px;
+                        }
+                    }          
+                }                
+            }
+            .yoga__img {
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}
+
+.influence {
+    margin-top: 48px;
+    .container {
+        .row {
+            display: flex;
+            align-items: center;
+            .num {
+                font-family: $titleFont;
+                font-size: 56px;
+                font-weight: 600;
+                color: $titleColor;
+            }
+            .fitnessGirl {
+                margin-left: 32px;
+            }
+            .desc {
+                font-size: 16px;
+                max-width: 328px;
+                margin-left: 73px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -48px;
+                    left: -30px;                    
+                    width: 64px;
+                    height: 72.86px;
+                    background-image: url('../images/Icons/liststar-2.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            }
+            .btn__content {
+                width: 120px;
+                height: 105px;
+                background-image: url("../images/Icons/list-ellipse-img.svg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .inf__btn {
+                    @extend %gradientText;                
+                    display: inline-flex;
+                    align-items: center;
+                    font-family: $descFont;
+                    img {
+                        margin-left: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.health {
+    margin-top: 100px;
+    .container {
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            .img__bar {
+                max-width: 500px;
+                width: 100%;
+                height: 582px;
+                background-image: url("../images/health-fitness.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                .rate{
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 8px 12px;
+                    background-color: #fff;
+                    border-radius: 12px;
+                    position: absolute;
+                    top: 72px;
+                    left: 8px;
+                    .icon {
+                        padding: 9px 9px 0px;
+                        background-color: #FFE6E5;
+                        border-radius: 50%;
+                    }
+                    .health__rate {
+                        color: $titleColor;
+                        font-weight: 600;
+                    }
+                    .count {
+                        font-weight: 500;                    
+                        @extend %gradientText;
+                    }
+                }
+                .courses {
+                    display: inline-block;
+                    padding: 8px 12px;
+                    background-color: #fff;
+                    border-radius: 12px;
+                    position: absolute;
+                    bottom: 43px;
+                    right: 32px;
+                    .count {
+                        @extend %gradientText;
+                        font-weight: 600;                       
+                    }
+                    .course__title {
+                        color: $titleColor;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .health__content {
+                .desc {
+                    max-width: 579px;
+                    margin-top: 40px;
+                }
+                .btn {
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+}
+
+.training {
+    margin-top: 100px;
+    .row {
+        display: flex;
+        align-items: center;
+        gap: 65px;
+        .training__content{
+            max-width: 465px;
+            width: 100%;
+            .desc {
+                margin-top: 40px;
+            }
+            .btn {
+                margin-top: 32px;
+            }
+        }
+        .img__content {
+            max-width: 580px;
+            width: 100%;
+            position: relative;
+            .second__img {
+                display: block;
+                margin-left: auto;
+                position: relative;
+                top: -108px;
+                z-index: -1;
+            }
+            .info__content {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 12px 8px;                
+                background-color: #fff;
+                border-radius: 16px;
+                position: absolute;
+                span {@extend %gradientText;}
+            }
+            .video__info{
+                top: 140px;
+                right: 0;
+            }
+            .pro__trainer {
+                bottom: 150px;
+                left: 0;
+            }
+        }
+    }
+}
+.instagram {
+    margin-top: 100px;
+    .follow__bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .follow__content {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-self: end;
+            .title {
+                font-size: 64px;
+                text-align: center;
+                margin-bottom: 32px;
+                span {
+                    @extend %gradientText;
+                }
+            }
+            .btn {
+                flex-direction: column;
+                padding: 20px 17px;    
+                margin: 0 auto;           
+            }
+        }
+    }
+    .images__bar {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+}
+.newsletter {
+    margin-top: 120px;
+    &__content {
+        @include flex(center, center, column, nowrap);
+        background-image: $gradient;
+        padding: 64px 232px;
+        text-align: center;
+        border-radius: 32px;
+        .title {
+            color: #fff;
+            font-size: 56px;
+        }
+        .desc {
+            color: #fff;
+            font-size: 15px;
+            margin-top: 16px;
+        }
+        .search__bar {
+            display: flex;
+            align-items: center;
+            width: 528px;
+            background-color: #fff;
+            border-radius: 48px;
+            padding-right: 8px;
+            margin-top: 40px;
+            input {
+                width: 100%;
+                padding: 26px 24px;
+                border-radius: 48px;
+                border-color: transparent;
+                outline: none;
+            }
+            button {
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 88px;
+    background-color: $bodyColorDark;
+    padding: 64px 0;
+    .row {
+        display: flex;
+        justify-content: space-between;
+        .yoga__section {
+            max-width: 244px;
+            
+        }
+    }
+    
+    .desc {
+        color: $textColorDark;
+        margin-top: 40px;
+    }
+    .informations {
+        display: flex;
+        gap: 72px;
+        .info {
+            max-width: 160px;
+
+            &__title {
+                font-family: $titleFont;
+                font-size: 24px;
+                font-weight: 500;
+                text-decoration: none;
+                color: #fff;
+            }
+            a {
+                text-decoration: none;
+                color: $textColorDark;
+
+            }
+        }
+    }
+    .copy__right {
+        margin-top: 48px;
+        padding-top: 48px;
+        border-top: 1px solid $textColorDark;
+        .socials {
+            display: flex;
+            gap: 32px;
+        }
+    }
+    .copyright {
+        color: $textColorDark;
+        font-family: $descFont;
+        font-size: 13px;
+    }
+}
