@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import "./media.scss";
 /* ========================= [Font's] =========================*/
 $titleFont: "Lora", serif;
 $descFont: "Poppins", sans-serif;
@@ -133,6 +133,9 @@ header {
                 }
             }
         }
+        .menu__icon {
+            display: none;
+        }
     }
 }
 main {
@@ -224,15 +227,19 @@ main {
         .row {
             display: flex;
             align-items: center;
-            .num {
-                font-family: $titleFont;
-                font-size: 56px;
-                font-weight: 600;
-                color: $titleColor;
-            }
-            .fitnessGirl {
-                margin-left: 32px;
-            }
+           .fitness__bar {
+            display: flex;
+            align-items: center;
+                .num {
+                    font-family: $titleFont;
+                    font-size: 56px;
+                    font-weight: 600;
+                    color: $titleColor;
+                }
+                .fitnessGirl {
+                    margin-left: 32px;
+                }
+           }
             .desc {
                 font-size: 16px;
                 max-width: 328px;
@@ -405,7 +412,6 @@ main {
             flex-direction: column;
             align-self: end;
             .title {
-                font-size: 64px;
                 text-align: center;
                 margin-bottom: 32px;
                 span {

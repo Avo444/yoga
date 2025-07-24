@@ -1,0 +1,149 @@
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 860px;
+    }
+    .desc {
+        font-size: 13px;
+    }
+    .title{
+        font-size: 46px;
+    }
+    main {
+        .hero {
+            .row {
+                .hero__inner {
+                    max-width: 500px;
+                    .title {
+                        font-size: 56px;
+
+                        &::after {
+                            top: 50%;
+                        }
+                    }
+                    
+                }
+                .yoga__img {
+                    max-width: 420px;
+                }
+            }
+        }
+        .health .container .row .img__bar {
+            height: 525px;
+        }
+        
+        .influence {
+            .container {
+                .row {
+                    .desc {
+                        font-size: 13px;
+                        max-width: 247px;
+                        margin-left: 45px;
+                    }
+                    .fitnessGirl {
+                        width: 270px;
+                    }
+                }
+            }
+        }
+        .training .row .img__content {
+            max-width: 462px;
+            img {
+                max-width: 350px;
+            }
+        }
+        .instagram .images__bar img{
+            max-width: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .container {
+        max-width: 800px;
+    }
+
+   
+
+    .influence .container .row .btn__content {
+        width: 100px;
+        height: 88px;
+    }
+    main .training .row .img__content {
+        img {
+            max-width: 300px;
+        }
+        .video__info {
+            top: 27px;
+        }
+        .pro__trainer {
+            bottom: 140px;
+        }
+    }
+}
+
+@media screen and (max-width: 860px) {
+     main {
+        .hero {
+            padding-bottom: 20px;
+            .row  {
+                flex-direction: column;                
+                .hero__inner {
+                    max-width: 500px;
+                    text-align: center;   
+                    .title {
+                        &::after {
+                            top: 70px;
+                            right: -50px;
+                        }
+                        &::before {
+                            left: 0;
+                        }
+                    } 
+                    .stats {
+                        justify-content: center;
+                    }   
+                }
+                .yoga__img {
+                    position: static;
+                    margin-top: 32px;
+                }
+            }
+        } 
+        .influence {
+            margin-top: 48px;
+            .container {
+                .row {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 32px;
+                    .btn__content {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        .health {
+            .container {
+                .row {
+                    flex-direction: column-reverse;                    
+                    .img__bar {
+                        width: 400px;
+                        height: 465px;
+                    }
+                    .health__content {
+                        text-align: center;
+                    }
+                }
+            }
+        }  
+        .training {
+            .row {
+               flex-direction: column;
+                .training__content{
+                   text-align: center;
+                }
+            }
+        }        
+    }
+}
