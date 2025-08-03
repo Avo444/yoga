@@ -190,6 +190,19 @@ main {
             }
         }
     }
+    main {
+        .trading {
+            .tradingContent {
+                justify-content: center;
+                gap: 30px;
+                .tradingCard {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -276,6 +289,23 @@ main {
 }
 
 
+@media screen and (max-width: 768px) {
+    .title, .desc {
+        text-align: center;
+    }
+
+    main {
+        .trading {
+            .tradingContent {
+                .tradingCard {
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 
@@ -289,6 +319,7 @@ main {
         }
     }
     header {
+        padding-top: 50px;
         .headerContent {
             .headerBar {
                 .headerStats {
@@ -304,6 +335,56 @@ main {
             }
             .headerCard {
                 max-width: 100%;
+            }
+        }
+    }
+    main {
+        .trading {
+            margin-top: 60px;
+            .tradingContent {
+                .tradingCard {
+                    max-width: 100%;
+                    .bigImg {
+                        img {
+                            width: 100%;
+                        }
+                        
+                    }
+                    .imgs {
+                        img {
+                            width: 95px;
+                        }
+                        .more {
+                            font-size: 16px;
+                            width: 95px;
+                            height: 95px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    main {
+        .trading {
+            .tradingContent {
+                .tradingCard {
+                    .imgs {
+                        img {
+                            width: 79px;
+                        }
+                        .more {
+                            width: 79px;
+                            height: 79px;
+                        }
+                    }
+                }
             }
         }
     }
