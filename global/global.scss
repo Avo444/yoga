@@ -1,0 +1,66 @@
+$primaryFont:  "Work Sans", sans-serif;
+$secondaryFont: "Space Mono", monospace;
+$primaryColor: #A259FF;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:$primaryFont;
+    background-color: #2B2B2B;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+%btn {
+    padding: 20px 50px;
+    background-color: $primaryColor;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    &:hover {
+        box-shadow: 0px 0px 50px 0px $primaryColor;
+        transform: translateY(-5px);
+        border-color: $primaryColor;
+        background-color: #A259FF20;
+    }
+}
+
+h1 {
+    font-size: 72px;
+    font-weight: 600;
+    color: #fff;
+}
+h2 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #fff;
+    
+}
+
+.title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 38px;
+}
+.desc {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    margin-top: 10px;
+}
