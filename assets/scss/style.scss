@@ -163,6 +163,126 @@ main {
             }
         }
     }
+    .topCreators {
+        margin-top: 160px;
+        .container {
+            .mobileBtn {
+                @extend %btn;
+                background-color: transparent;
+                border-color: $primaryColor;
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+                display: none;
+            }
+            .creatorsHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                .informationBar {
+                    max-width: 343px
+                }
+                .btn {
+                    @extend %btn;
+                    background-color: transparent;
+                    border-color: $primaryColor;
+                }
+            }
+            .creatorsContent {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 30px;
+                margin-top: 60px;
+                .creatorContent {
+                    padding: 20px;
+                    text-align: center;
+                    position: relative;
+                    background-color: #3B3B3B;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    transition-duration: .3s;
+                    .num {
+                        position: absolute;
+                        left: 20px;
+                        top: 18px;
+                        padding: 3px 10px;
+                        background-color: #2B2B2B;
+                        border-radius: 50%;
+                        color: #858584;
+                        font-family: $secondaryFont;
+                        font-size: 16px;
+                    }
+                    .name {
+                        font-size: 22px;
+                        font-weight: 600;
+                        color: #fff;
+                        margin-top: 20px;
+                    }
+                    .sales {
+                        margin-top: 5px;
+                        font-size: 16px;
+                        color: #858584;
+                        span {
+                            margin-left: 10px;
+                            color: #fff;
+                            font-family: $secondaryFont;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: 0px 0px 20px 0 #ffffff62;
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
+    }
+    .categories {
+        margin-top: 160px;
+        .container {
+            .categoriesContent {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+                margin-top: 60px;
+                .category {
+                    cursor: pointer;
+                    border-radius: 20px;
+                    transition-duration: .3s;
+                    .img {
+                        position: relative;
+                        height: 240px;
+                        .background {
+                            filter: blur(5px);
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .icon {
+                            position: absolute;
+                            inset: 0;
+                            margin: auto;
+                            z-index: 1000;
+                        }
+                    }
+                    .nameContent {
+                        padding: 20px 30px 25px 30px;
+                        color: #fff;
+                        font-size: 22px;
+                        font-weight: 600;
+                        background-color: #3B3B3B;
+                        border-radius: 0 0 20px 20px;
+
+                    }
+
+                    &:hover {
+                        box-shadow: 0px 0px 20px 0 #ffffff62;
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -202,6 +322,80 @@ main {
                 }
             }
         }
+        .topCreators {
+            .container {
+                .creatorsContent {
+                    grid-template-columns: 1fr 1fr;
+                    .creatorContent {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        text-align: start;
+                        img {
+                            width: 60px;
+                            height: 60px;
+                        }
+                        .name {
+                            margin-top: 0;
+                        }
+                        .num {
+                            left: 12px;
+                            top: 13px;
+                        }
+
+                        &.hideTablet {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .categories {
+        margin-top: 160px;
+        .container {
+            .categoriesContent {
+                display: grid;
+                grid-template-columns: minmax(repeat(4, 150px), repeat(4, 1fr));
+                gap: 30px;
+                margin-top: 60px;
+                .category {
+                    cursor: pointer;
+                    border-radius: 20px;
+                    transition-duration: .3s;
+                    .img {
+                        position: relative;
+                        height: 240px;
+                        .background {
+                            filter: blur(5px);
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .icon {
+                            position: absolute;
+                            inset: 0;
+                            margin: auto;
+                            z-index: 1000;
+                        }
+                    }
+                    .nameContent {
+                        padding: 20px 30px 25px 30px;
+                        color: #fff;
+                        font-size: 22px;
+                        font-weight: 600;
+                        background-color: #3B3B3B;
+                        border-radius: 0 0 20px 20px;
+
+                    }
+
+                    &:hover {
+                        box-shadow: 0px 0px 20px 0 #ffffff62;
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
+    }
     }
 }
 
@@ -288,18 +482,60 @@ main {
     }
 }
 
+@media screen and (max-width: 968px) {
+    main {
+        .categories {
+            .container {
+                .categoriesContent {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 768px) {
-    .title, .desc {
-        text-align: center;
-    }
 
     main {
         .trading {
+            margin-top: 60px;
             .tradingContent {
                 .tradingCard {
                     &:nth-child(2) {
                         display: none;
+                    }
+                }
+            }
+        }
+        .topCreators {
+            margin-top: 60px;
+            .container {
+
+                .mobileBtn {
+                    display: flex;
+                }
+                .creatorsHeader {
+                    .btn {
+                        display: none;
+                    }
+                }
+                .creatorsContent {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+        .categories {
+            .container {
+                .categoriesContent {
+                    grid-template-columns: repeat(2, 47%);
+                    .category {
+                        .img {
+                            height: 200px;
+                            .icon {
+                                width: 60px;
+                            }
+                        }
                     }
                 }
             }
@@ -310,7 +546,13 @@ main {
 
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
+    .title {
+        font-size: 28px;
+    }
+    .desc {
+        font-size: 16px;
+    }
     nav{
         .logo {
             img {
@@ -342,6 +584,7 @@ main {
         .trading {
             margin-top: 60px;
             .tradingContent {
+                margin-top: 40px;
                 .tradingCard {
                     max-width: 100%;
                     .bigImg {
@@ -366,6 +609,39 @@ main {
                 }
             }
         }
+        .topCreators {
+            margin-top: 80px;
+            .container {
+                .creatorsContent {
+                    margin-top: 40px;
+                    .creatorContent {
+                        &.hideMobile {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .categories {
+            .container {
+                .categoriesContent {
+                    grid-template-columns: repeat(2, 47%);
+                    .category {
+                        .img {
+                            height: 150px;
+                            .icon {
+                                width: 60px;
+                            }
+                        }
+                        .nameContent {
+                            font-size: 16px;                            
+                            padding: 20px;
+                            padding-bottom: 25px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -385,6 +661,12 @@ main {
                         }
                     }
                 }
+            }
+        }
+        .topCreators .container .creatorsContent .creatorContent .sales {
+            font-size: 12px;
+            span {
+                margin-left: 0;
             }
         }
     }
